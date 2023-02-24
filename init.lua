@@ -7,10 +7,10 @@ minetest.register_chatcommand("who", {
         -- Récupérer le nombre de joueurs connectés
         local count = #players
         -- Afficher le nombre de joueurs connectés dans la console du serveur
-        print("There are " .. count .. " player(s) connected.")
+        print("There are " .. count .. " player(s) connected: "..table.concat(players, ", "))
         -- Afficher le nombre de joueurs connectés dans le chat du joueur qui a exécuté la commande
         if name and name ~= "" then
-            minetest.chat_send_player(name, "There are " .. count .. " player(s) connected.")
+            minetest.chat_send_player(name, "There are " .. count .. " player(s) connected: "..table.concat(players, ", "))
         end
     end,
 })
